@@ -59,6 +59,8 @@ a:hover, a:focus {
   height: 1px;
   overflow: hidden;
   margin: -1px;
+  /* font-size: 0;
+  line-height: 0; */
   clip: rect(0, 0, 0, 0)
 }
 .a11y:focus {
@@ -101,7 +103,10 @@ a:hover, a:focus {
 /* 레이아웃 설계 */
 
 .container {
-  background-color: silver;
+  /* background-image: url("./images/bg_flower.png"), linear-gradient(to bottom, #aaa 0%, #eee 50%, #fff 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: 50% 0, 0 0; */
+  background: url("./images/bg_flower.png") no-repeat 50% 0, linear-gradient(to bottom, #aaa 0%, #eee 50%, #fff 100%) repeat 0 0;
 }
 .header, .visual, .main-content, .slogan, .footer {
   width: 940px;
@@ -191,7 +196,7 @@ a:hover, a:focus {
   display: block;
   border-top: 2px solid #000;
 }
-.main-menu span:hover, .main-menu>li:focus span {
+.main-menu li:hover span, .main-menu>li:focus span {
   color: #ff0;
 }
 .sub-menu {
@@ -235,16 +240,99 @@ a:hover, a:focus {
 }
 .sub-menu a:hover::before {
   content: '\e801';
+  font-size: 1.2rem;
 }
 
 /* 비주얼 */
 
-.visual {
-  background-color: pink;
-  height: 120px;
+@keyframes text-ani {
+  0% {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0);
+    transform: translate(0, 0);
+    /* top: 0;
+    left: 0; */
+  }
+  100% {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 1);
+    transform: translate(400px, 70px);
+    /* top: 70px;
+    left: 400px; */
+  }
 }
+@keyframes flower-ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.visual {
+  height: 120px;
+  position: relative;
+}
+.visual::before, .visual::after {
+  content: "";
+  position: absolute;
+  animation: flower-ani 2s infinite alternate;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.visual::before {
+  background: url("./images/ani_flower_01.png") no-repeat 0 -15px, url("./images/ani_flower_02.png") no-repeat 670px 0;
+  /* animation: flower-ani 2s infinite alternate; */
+}
+.visual::after {
+  background: url("./images/ani_flower_03.png") no-repeat 300px 0, url("./images/ani_flower_04.png") no-repeat 800px 0;
+  /* animation: flower-ani 2s 1s infinite alternate; */
+  animation-delay: 1s;
+}
+.visual-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: absolute;
+  /* float: left; */
+  /* width: 500px; */
+  /* display: inline-block; */
+  /* animation-name: text-ani;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 3;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out; */
+  animation: text-ani 2s forwards ease-in-out;
+}
+
+/* transition 실습 */
+
+
+/* .box {
+  width: 100px;
+  height: 100px;
+  background: lime;
+  border: 2px solid #000;
+  transition-property: border-radius, background;
+  transition-duration: 3s, 2s;
+  transition-delay: 0s, 3s;
+  transition-timing-function: ease-in-out;
+}
+  /* transition: all 2s ease-in-out; */
+
+
+/* .box-act {
+  border-radius: 50%;
+  background: aqua;
+} */
+
+
+/* 메인 콘텐츠 */
+
 .main-content {
-  background-color: blue;
+  background-color: #fff;
   padding: 30px 15px;
   min-height: 400px;
   /* height: 60vh;
