@@ -7,7 +7,7 @@
 
 /* CSS Reset */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, button, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -51,7 +51,7 @@ a:hover, a:focus {
 
 /* 숨긴 콘텐츠 */
 
-.readable-hidden, .a11y {
+.readable-hidden, .a11y, legend {
   /* position: absolute;
   left: -9999em; */
   position: absolute;
@@ -332,9 +332,10 @@ a:hover, a:focus {
 /* 메인 콘텐츠 */
 
 .main-content {
-  background-color: #fff;
+  background: #fff;
   padding: 30px 15px;
   min-height: 400px;
+  border-radius: 15px 15px 0 0;
   /* height: 60vh;
   isplay: flex;
   flex-direction: row;
@@ -347,22 +348,175 @@ a:hover, a:focus {
 .group1 {
   width: 250px;
   float: left;
-  background-color: lime;
 }
 .group2 {
   width: 380px;
   float: left;
-  background-color: teal;
 }
 .group3 {
   width: 190px;
   float: left;
-  background-color: tomato;
 }
+.login {
+  background: orange radial-gradient(circle at right top, orange, orangered);
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 5px 0 0 hsla(0, 0%, 20%, 0.5);
+}
+.login-heading {
+  color: #ff0;
+  font-family: 'Noto Sans Bold';
+  font-size: 1.5rem;
+  text-indent: 10px;
+}
+.login-form {
+  background: #fff;
+  border-radius: 5px 5px 0 0;
+  margin-top: 10px;
+  padding: 10px 10px 0 10px;
+}
+.user-email, .user-pw {
+  margin-bottom: 5px;
+}
+.login-form fieldset {
+  border-bottom: 1px solid #aaa;
+  position: relative;
+  padding-bottom: 5px;
+}
+.join {
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.join li::before {
+  content: '\e804';
+  font-family: "fontello";
+  color: orangered;
+}
+.login-form label {
+  width: 4em;
+  display: inline-block;
+}
+.login-form input {
+  width: 95px;
+  height: 24px;
+  padding-left: 5px;
+  border: 1px solid #aaa;
+}
+.btn-login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 53px;
+  height: 53px;
+  padding: 0;
+  border: 0;
+  background: #f00;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.validation {
+  margin-top: 20px;
+}
+.validation-list a {
+  border: 1px solid #aaa;
+  display: block;
+  margin-bottom: 10px;
+  height: 35;
+  line-height: 20px;
+  border-radius: 20px;
+  padding-left: 45px;
+  padding-bottom: 5px;
+  background: url("./images/validation_icon.png") no-repeat 15px 50%, linear-gradient(to bottom, #ccc, #eee);
+}
+
+/* .validation-list>li>a {
+  background: url("./images/validation_icon.png") no-repeat 15px 50%, linear-gradient(to bottom, #ccc, #eee);
+  margin: 10px;
+  width: 240px;
+  height: 30px;
+  display: flex;
+  border: 2px solid #aaa;
+  justify-content: center;
+  border-radius: 15px;
+} */
+
+
+/* 웹관련 용어 */
+
+.term {
+  background: linear-gradient(to bottom, #eee, #ccc);
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 20px;
+}
+.term-heading {
+  font-family: "Noto Sans Bold";
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.term-list {
+  margin-top: 10px;
+}
+.term-list-heading {
+  font-weight: bold;
+  width: 145px;
+  float: right;
+  color: #296897;
+}
+.term-list-thumbnail {
+  width: 60px;
+  float: left;
+}
+.term-list-brief {
+  width: 145px;
+  float: right;
+  margin-top: 5px;
+}
+
+/* .term {
+  background: linear-gradient(to bottom, #ccc, #eee);
+  margin-top: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 15px 20px;
+  position: relative;
+  float: left;
+}
+.term-hadding {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-left: -4px;
+}
+.term-list {
+  float: left;
+  padding-left: 65px;
+}
+.term-list-heading {
+  color: blue;
+}
+.term-list-thumbnail {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+} */
+
+
+/* 슬로건 */
+
 .slogan {
   background-color: orange;
   padding: 15px;
 }
+
+/* 푸터 */
+
 .footer-bg {
   background-color: purple;
 }
