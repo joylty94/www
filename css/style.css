@@ -95,7 +95,6 @@ a:hover, a:focus {
 
 .clearfix::after {
   content: "";
-  background-color: olive;
   clear: both;
   display: block;
 }
@@ -458,16 +457,16 @@ a:hover, a:focus {
 .term-heading {
   font-family: "Noto Sans Bold";
   font-size: 1.5rem;
-  font-weight: bold;
 }
 .term-list {
   margin-top: 10px;
 }
 .term-list-heading {
-  font-weight: bold;
   width: 145px;
   float: right;
+  font-weight: bold;
   color: #296897;
+  margin-top: -5px;
 }
 .term-list-thumbnail {
   width: 60px;
@@ -477,7 +476,259 @@ a:hover, a:focus {
   width: 145px;
   float: right;
   margin-top: 5px;
+  word-break: break-all;
 }
+
+/* 검색 폼 */
+
+.search {
+  border: 1px solid #aaa;
+  background: #ccc linear-gradient(to bottom, #eee, #ccc);
+  padding: 15px 25px 10px;
+  border-radius: 15px 15px 0 0;
+  border-bottom-color: #fff;
+}
+
+/* .search-form test {
+  display: flex;
+  justify-content: space-between;
+} */
+
+.search-form label::before {
+  content: '\e800';
+  font-family: "fontello";
+  margin-right: 3px;
+}
+.search-form input[type="search"] {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 2px 2px 2px 5px;
+  width: calc(100% - 125px);
+}
+.search-form input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: pink;
+}
+.search-form input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: pink;
+}
+.search-form input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: pink;
+}
+.search-form input:-moz-placeholder {
+  /* Firefox 18- */
+  color: pink;
+}
+.btn-search {
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 0 10px;
+  background: #ccc linear-gradient(to bottom, #666, #333);
+}
+
+/* 공지사항 및 자료실 */
+
+.board {
+  margin-top: 20px;
+  position: relative;
+}
+.notice-heading, .pds-heading {
+  position: absolute;
+  top: 0;
+  color: #666;
+  cursor: pointer;
+  padding: 5px 15px;
+  border: 1px solid #aaa;
+  border-radius: 5px 5px 0 0;
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+}
+.board-act .notice-heading, .board-act .pds-heading {
+  background: #fff;
+  color: #ed802d;
+  border-color: #ed802d;
+  border-bottom-color: #fff;
+}
+.notice-heading {
+  left: 0;
+}
+.pds-heading {
+  left: 83px;
+}
+.notice-list, .pds-list {
+  padding: 40px 0 0 20px;
+  list-style: square;
+}
+.notice-list li, .pds-list li {
+  margin: 5px 0;
+}
+.notice-list a, .pds-list a {
+  width: 285px;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.notice-list time, .pds-list time {
+  float: right;
+}
+.notice-more, .pds-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+.notice-more::before, .pds-more::before {
+  content: '\e802';
+  font-family: "fontello";
+  color: hsla(90, 90%, 30%, 1);
+  margin-right: 5px;
+}
+.notice-list, .pds-list, .notice-more, .pds-more {
+  display: none;
+}
+.board-act ul, .board-act>a {
+  display: block;
+}
+
+/* 새소식 */
+
+
+/* .news {
+  position: relative;
+}
+.news-heading {
+  padding-top: 10px;
+  color: orange;
+}
+.news-item-heading {
+  padding-top: 10px;
+  float: right;
+  width: 300px;
+  padding-left: 60px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.news-item time {
+  float: right;
+  width: 240px;
+}
+.news-item p {
+  float: right;
+  width: 240px;
+}
+.news-item figure>figcaption {
+  padding-left: 20px;
+  margin-top: 1px;
+}
+.news-more {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+} */
+
+.news {
+  margin-top: 10px;
+  position: relative;
+}
+.news::before {
+  content: "";
+  position: absolute;
+  top: 34px;
+  left: 0;
+  width: 80%;
+  height: 2px;
+  background: #aaa linear-gradient(to right, #ccc, #eee);
+}
+.news-heading {
+  font-family: "Noto Sans Bold", sans-serif;
+  font-size: 1.6rem;
+  color: #ed802d;
+}
+.news-heading+a {
+  display: block;
+}
+.news-heading+a:hover, .news-heading+a:focus {
+  color: inherit;
+}
+
+/* 새소식 GRID */
+
+
+/* .news-item {
+  background: yellow;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  grid-template-rows: 20px 20px 1fr;
+  grid-template-areas: "thumbnail headline" "thumbanil time" "thumbanil brief";
+}
+.news-item h3 {
+  grid-area: 1/2/2/3;
+  grid-area: headline;
+}
+.news-item time {
+  grid-area: 2/2/3/3;
+  grid-area: time;
+}
+.news-item p {
+  grid-area: 3/2/4/3
+  grid-area: brief;
+}
+.news-item figure {
+  grid-area: 1/1/2/2;
+  grid-area: thumbnail;
+} */
+
+
+/* 새소식 기본. */
+
+.news-item {
+  margin-top: 30px;
+  padding-left: 130px;
+  min-height: 115px;
+  position: relative;
+}
+.news-item h3 {
+  font-weight: 700;
+}
+.news-item time {
+  margin: 5px 0 10px;
+}
+.news-item figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.news-item img {
+  margin-bottom: 15px;
+  box-shadow: 0 15px 15px 2px #aaa;
+}
+.news-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+.news-more::before {
+  content: '\e802';
+  font-family: "fontello";
+  color: hsla(90, 90%, 30%, 1);
+  margin-right: 5px;
+}
+
+/* .term-list dt:nth-of-type(2n+2) {
+  background: yellow;
+}
+.term-list dd:nth-of-type(4n+4) {
+  background: pink;
+}
+.term-list dd:nth-of-type(4n+3) {
+  background: pink;
+} */
+
 
 /* .term {
   background: linear-gradient(to bottom, #ccc, #eee);
