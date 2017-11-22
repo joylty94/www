@@ -123,17 +123,127 @@
             <dt class="term-list-heading">웹 표준 이란?</dt>
             <dd class="term-list-thumbnail"><img src="./images/web_standards.gif" alt="W3C 로고"></dd>
             <dd class="term-list-brief">W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...</dd>
+          </dl>
         </div>
-        </dl>
       </div>
-      <div class="group group2">그룹2</div>
-      <div class="group group3">그룹3</div>
+      <div class="group group2">
+        <div class="search">
+          <h2 class="search-heading readable-hidden">검색</h2>
+          <form action="javascript:alert('회원님 반갑습니다.');" class="search-form">
+            <fieldset>
+              <legend>검색 폼</legend>
+              <div class="test">
+                <label for="search">자료검색</label><input type="search" id="search" placeholder="검색어를 입력하세요." required>
+                <button type="submit" class="btn-search">검색</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <div class="board">
+          <div class="notice board-act">
+            <h2 id="notice-heading" class="notice-heading" tabindex="0">공지사항</h2>
+            <ul class="notice-list">
+              <li>
+                <a href="#">HTML의 모든 것을 알려주마 샘플 활용법</a>
+                <time datetime="2017-11-21T14:49:21">2017.11.21</time>
+              </li>
+              <li>
+                <a href="#">W3C 사이트 리뉴얼 및 공지사항</a>
+                <time datetime="2017-11-21T14:49:21">2017.11.21</time>
+              </li>
+              <li>
+                <a href="#">KWCAG 2.1 소식</a>
+                <time datetime="2017-11-21T14:49:21">2017.11.21</time>
+              </li>
+              <li>
+                <a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a>
+                <time datetime="2017-11-21T14:49:21">2017.11.21</time>
+              </li>
+              <li>
+                <a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나누어 봅시다.</a>
+                <time datetime="2017-11-21T14:49:21">2017.11.21</time>
+              </li>
+            </ul>
+            <a href="#" class="notice-more" title="공지사항" aria-labelledby="notice-heading">더보기</a>
+          </div>
+          <div class="pds">
+            <h2 id="pds-heading" class="pds-heading" tabindex="0">자료실</h2>
+            <ul class="pds-list">
+              <li>
+                <a href="#">디자인 사이트 링크 모음</a>
+                <time datetime="2017-11-21T14:49:21">2017.11.21</time>
+              </li>
+              <li>
+                <a href="#">웹 접근성 관련 자료 모음</a>
+                <time datetime="2017-11-21T14:49:21">2017.11.21</time>
+              </li>
+              <li>
+                <a href="#">예제 샘플 응용해보기</a>
+                <time datetime="2017-11-21T14:49:21">2017.11.21</time>
+              </li>
+              <li>
+                <a href="#">웹 접근성 향상을위한 국가 표준 기술 가이드라인</a>
+                <time datetime="2017-11-21T14:49:21">2017.11.21</time>
+              </li>
+              <li>
+                <a href="#">로얄티 프리 이미지 자료</a>
+                <time datetime="2017-11-21T14:49:21">2017.11.21</time>
+              </li>
+            </ul>
+            <a href="#" class="pds-more" title="자료실" aria-labelledby="pds-heading">더보기</a>
+          </div>
+        </div>
+        <section class="news">
+          <h2 class="news-heading" id="news-heading">새소식</h2>
+          <a href="#">
+            <article class="news-item clearfix">
+              <h3 class="news-item-heading">W3C 사이트가 리뉴얼 되었습니다.</h3>
+              <time datetime="2017-11-22T11:35:15">2017.11.22</time>
+              <p>
+                디자인 및 다양한 view 환경을 고려하여 구성되어 있으며, 기존보다 최신 정보 및 개발자를 위한 기술 가이드도 찾기 쉽도록 구성되어 있습니다.
+              </p>
+              <figure>
+                <img src="images/news.gif" alt="HTML5를 발표하면서 새롭게 리뉴얼 된 W3C 공식 웹사이트">
+                <figcaption>W3C 리뉴얼</figcaption>
+              </figure>
+            </article>
+          </a>
+          <a href="#" class="news-more" aria-labelledby="news-heading">더보기</a>
+        </section>
+      </div>
+      <div class="group group3">
+        <div class="event-related">
+          <div class="event">
+            <h2 class="event-heading">신규 <span>이벤트</span></h2>
+            <div id="event=detail">
+              <p><img src="./images/free_gift.gif" alt="이벤트 경품 : 웹표준 핵심 가이드북 2 도서 증정"></p>
+              <p><em>웹표준 핵심 가이드북 2출시!</em> 선착순 500명 한정으로 증정.</p>
+            </div>
+            <div class="btn-event">
+              <button type="button" class="btn-event-prev">이전 이벤트 보기</button>
+              <button type="button" class="btn-event-next">이후 이벤트 보기</button>
+            </div>
+            <h2>관련 사이트</h2>
+            <div class=" site ">멀티 캠퍼스</div>
+          </div>
+          <div class="related">
+            <h2 class="related-heading">관련 <span>사이트</span></h2>
+            <ul class="related-list">
+              <li><a href="#">패스트 캠퍼스</a></li>
+              <li><a href="#">W3C</a></li>
+              <li><a href="#">웹접근성 연구소</a></li>
+              <li><a href="#">CSS Zengarden</a></li>
+              <li><a href="http://cafe.naver.com/webcafe2010">네이버 카페</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
-    <article class="slogan">
-      <h2 class="slogan-heading">슬로건</h2>
+    <article class="slogan ">
+      <h2 class="slogan-heading ">슬로건</h2>
     </article>
-    <div class="footer-bg">
-      <footer class="footer">푸터</footer>
+    <div class="footer-bg ">
+      <footer class="footer ">푸터</footer>
     </div>
   </div>
 </body>
