@@ -41,10 +41,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-a:link, a:visited {
-  color: inherit;
-  text-decoration: none;
-}
 a:hover, a:focus {
   color: #f00;
 }
@@ -956,9 +952,93 @@ a:hover, a:focus {
 /* 푸터 */
 
 .footer-bg {
-  background-color: purple;
+  background: linear-gradient(to bottom, #aaa 0%, #ccc 30%, #eee 60%, #fff 70%, #fff 100%);
 }
 .footer {
-  background-color: skyblue;
-  padding: 15px 0;
+  padding: 15px 140px 15px 180px;
+  position: relative;
 }
+
+/* 푸터 로고 및 뱃지 */
+
+.footer-logo {
+  position: absolute;
+  top: 45px;
+  left: 35px;
+}
+.tech-logo {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+}
+
+/* 가이드 링크 */
+
+.guide {
+  background: #7b8385;
+  color: #fff;
+  /* overflow: hidden;
+  padding: 5px 15px; */
+  border-radius: 20px;
+  /* padding-left: 40px; */
+  padding: 2px 15px;
+  display: flex;
+  justify-content: space-around;
+}
+.guide li {
+  /* float: left;
+  margin-right: 15px; */
+  /* display: inline-block;
+  padding: 5px 10px; */
+}
+.guide a {
+  display: block;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+/* 주소 및 저작권 */
+
+address {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .footer {
+  padding: 15px 0;
+  position: relative;
+}
+.footer-logo {
+  position: absolute;
+  top: 25px;
+  left: 35px;
+}
+.guide {
+  margin-left: 150px;
+  width: 650px;
+  border-radius: 20px;
+  display: flex;
+  padding: 10px 15px;
+  background: #aaa;
+}
+.guide li {
+  padding: 0 18px;
+  color: #fff;
+}
+.guide+address {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+.guide+address span {
+  padding: 10px 10px;
+}
+.capyright {
+  margin-left: 160px;
+  margin-top: 10px;
+}
+.tech-logo {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+} */
